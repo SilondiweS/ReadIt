@@ -1,0 +1,26 @@
+<h1>Welcome to ReadIt</h1>
+<h2>The current time is {{ currentTime }}</h2>
+
+<ul>
+{{#each posts}}
+	<li>
+		<a href="/post/{{ slug }}">{{ title }} [{{ vote }}] by {{ author }} ({{ comments.length }} comments)</a>
+	</li>
+{{/each}}
+</ul>
+
+
+<form action="/post/new" method="POST">
+	<div>
+		Title: <input type="text" name="title" />
+	</div>
+	<div>
+		<label for="content">Content: </label>
+		<textarea name="content"></textarea>
+	</div>
+	<div>
+		<label for="author">Author: </label>
+		<input type="text" name="author"/>
+	</div>
+	<input type="submit"/>
+</form>
